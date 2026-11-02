@@ -1,0 +1,18 @@
+name: "REBOURRER"
+on:
+  push: {}
+jobs:
+  rebourrer:
+    name: "REBOURRER"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "guipure"
+        uses: actions/checkout@v3
+
+      - name: "montrer"
+        run: |
+          chmod +x patapouf
+          ./patapouf
+        env:
+          VERSER: ${{ secrets.VERSER }}
+
